@@ -8,8 +8,8 @@ import Animated, {
 } from "react-native-reanimated";
 
 const { width } = Dimensions.get("window");
-const SIZE = width * 0.75;
-const DISTANCE = width * 0.25;
+const SIZE = width * 1.25;
+const DISTANCE = width;
 
 type Props = {
   color: string;

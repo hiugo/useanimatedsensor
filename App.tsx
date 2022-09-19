@@ -3,14 +3,24 @@ import { StyleSheet, View } from "react-native";
 
 import Circle from "./src/circle";
 
-const COLORS = ["#1a1c2c", "#5d275d", "#b13e53", "#ef7d57"];
+const BG_COLOR = "#0d2b45";
+
+const COLORS = [
+  "#203c56",
+  "#544e68",
+  "#8d697a",
+  "#d08159",
+  "#ffaa5e",
+  "#ffd4a3",
+  "#ffecd6",
+];
 
 function App() {
   return (
     <View style={styles.container}>
-      <Circle color={COLORS[1]} />
-      <Circle scale={0.75} color={COLORS[2]} />
-      <Circle scale={0.5} color={COLORS[3]} />
+      {COLORS.map((color, index) => (
+        <Circle key={color} scale={1 - index * 0.1} color={COLORS[index]} />
+      ))}
 
       <StatusBar style="auto" />
     </View>
@@ -20,7 +30,7 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS[0],
+    backgroundColor: BG_COLOR,
     justifyContent: "center",
     alignItems: "center",
   },
